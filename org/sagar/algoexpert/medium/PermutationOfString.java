@@ -1,7 +1,9 @@
-package org.sagar.org.sagar.interview;
+package org.sagar.algoexpert.medium;
 
 public class PermutationOfString {
 
+    // stringLen is not part of algorithm.
+    // It is just used for printing in new line
     static int stringLen;
 
     public static void main(String[] args) {
