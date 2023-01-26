@@ -1,4 +1,4 @@
-package org.sagar.algoexpert.medium;
+package org.sagar.algoexpert.medium.permutation;
 
 public class PermutationOfString {
 
