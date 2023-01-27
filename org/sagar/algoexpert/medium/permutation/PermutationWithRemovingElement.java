@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+// Upper bound: O(n^2*n!) time | O(n*n!) space
+// Roughly: O(n*n!) time | O(n*n!) space
 public class PermutationWithRemovingElement {
     public static void main(String[] args) {
         List<Integer> array = Arrays.asList(1, 2, 3);
@@ -13,9 +15,7 @@ public class PermutationWithRemovingElement {
 
         permutation(array, permutation, permutationList);
 
-        System.out.println(permutationList.size());
-
-        //Display code
+        // Display code
         permutationList.forEach(permutations -> {
             System.out.print(" ");
             permutations.forEach(System.out::print);
@@ -36,30 +36,5 @@ public class PermutationWithRemovingElement {
                 permutation(newList, newPermutation, permutationList);
             }
         }
-    }
-
-    private static Integer[] copyArray(Integer[] array, Integer[] permutation, Integer current) {
-        Integer[] copyArr = new Integer[array.length + 1];
-        int i =0;
-
-        for (Integer integer : array) {
-            copyArr[i++] = integer;
-        }
-        copyArr[i] = current;
-
-        return copyArr;
-    }
-
-    private static Integer[] removeGivenElementFromArray(Integer[] array, Integer currentInt) {
-        Integer[] newArray = new Integer[array.length - 1];
-        int i = 0;
-
-        for (Integer integer : array) {
-            if (integer != currentInt) {
-                newArray[i++] = integer;
-            }
-        }
-
-        return newArray;
     }
 }
